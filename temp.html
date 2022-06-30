@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Temperature Converter</title>
+<style>
+ h1 {
+  color: #F2AA4CFF;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 300%;
+  padding-top: 70px;
+  padding-right: 140px;
+}
+.f  {
+  color: #006B38FF;
+  font-family: sans-serif;
+  font-size: 180%;
+  padding-left: 80px;
+}
+
+.c{
+	padding-left:110px;
+}
+.input{
+	width: 310px;
+	height: 35px;
+	border-width: 8px;
+	font-size: 20px;
+	font-family: verdana
+}
+table	{
+	padding-left: 180px;
+	padding-top: 150px;
+}
+.arrow{
+	color: grey;
+    font-family:sans-serif;
+    font-size:180%;
+	padding-left:110px;
+}
+.bg{
+     background: url(https://assets.newatlas.com/dims4/default/4124a46/2147483647/strip/true/crop/1188x792+366+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Fdiamond-nanofiber-2.jpg);
+     background-repeat: no-repeat;
+     background-size: 100%;
+}
+</style>
+</head>
+<body class="bg">
+<u><h1>Temperature Converter</h1></u>
+<table>
+	<tr>
+		<td>
+			
+		<input class="input" id="Fahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter('F',this.value)" onchange="temperatureConverter('F',this.value)"><label class="arrow"><b><=======></b></label></br></br></br>
+		<label class = "f"><b>Fahrenheit</b></label>
+		</td>
+		<td class="c" >
+		<input class="input" id="Celcius" type="number" placeholder="Celcius" oninput="temperatureConverter('C',this.value)" onchange="temperatureConverter('C',this.value)"></br></br></br>
+		<label class = "f"><b>Celcius</b></label>
+		</td>
+	</tr>
+</table>
+<script>
+
+function temperatureConverter(degree,valNum) {
+  if(degree == 'F'){
+ 	 valNum = parseFloat(valNum);
+  	 document.getElementById("Celcius").value=(valNum-32)/1.8;
+     }
+  else{
+  	valNum = parseFloat(valNum);
+    document.getElementById("Fahrenheit").value=(valNum*1.8)+32;
+  }
+  
+}
+</script>
+</body>
+</html>
